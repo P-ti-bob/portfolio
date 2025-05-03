@@ -1001,10 +1001,6 @@ a:focus {
     border-color: var(--primary);
 }
 
-
-/*******************************/
-/********* Pricing CSS *********/
-/*******************************/
 .price {
     position: relative;
     width: 100%;
@@ -1330,6 +1326,102 @@ a:focus {
 .testimonial .owl-dot.active {
     background: var(--primary);
 }
+
+/*******************************/
+/******* Compétences CSS *******/
+/*******************************/
+
+.comp-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 60px;
+  }
+.scroll-row {
+    position: relative;
+    padding: 20px 0;
+  }
+  .scroll-container {
+    display: flex;
+    gap: 20px;
+    /* Animation de défilement */
+    animation-duration: 40s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  /* Animation vers la gauche */
+  .scroll-container[data-direction="left"] {
+    animation-name: scroll-left;
+  }
+  /* Animation vers la droite */
+  .scroll-container[data-direction="right"] {
+    animation-name: scroll-right;
+  }
+  /* Pause de l'animation au survol de la rangée */
+  .scroll-row:hover .scroll-container {
+    animation-play-state: paused;
+  }
+  .slide-item {
+    flex-shrink: 0;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  .slide-item:hover {
+    transform: scale(1.05);
+  }
+  .slide-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .slide-item h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0.5rem 0 0.3rem;
+  }
+  .slide-item p {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin: 0;
+  }
+  /* Défilement */
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.33%); }
+  }
+  @keyframes scroll-right {
+    0% { transform: translateX(-33.33%); }
+    100% { transform: translateX(0); }
+  }
+  @media (max-width: 768px) {
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes scroll-right {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+  }
+  /* Overlays en dégradé */
+  .gradient-left, .gradient-right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 10;
+  }
+  .gradient-left {
+    left: 0;
+    background: linear-gradient(to right, #ffffff, transparent);
+  }
+  .gradient-right {
+    right: 0;
+    background: linear-gradient(to left, #ffffff, transparent);
+  }
 
 
 /*******************************/
