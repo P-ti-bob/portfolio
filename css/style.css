@@ -334,6 +334,14 @@ a:focus {
     font-weight: 600;
     text-transform: uppercase;
 }
+.hero .hero-text h3 {
+    display: inline-block;
+    margin: 0;
+    height: 25px;
+    color: var(--primary);
+    font-size: 25px;
+    font-weight: 500;
+}
 
 .hero .hero-text .typed-text {
     display: none;
